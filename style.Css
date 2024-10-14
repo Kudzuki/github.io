@@ -1,0 +1,408 @@
+* {
+    padding: 0px;
+    margin: 0px;
+
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: "Segoe Print";
+    /* letter-spacing: -8px; */
+    word-spacing: 5px;
+    line-height: 60px;
+
+    color: white;
+
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Segoe Print";
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Kosugi Maru"),
+        /* Если не получилось, загрузит woff2 */
+        url("./Сайт/font/SegoePrint/segoeprint.ttf") format("ttf"),
+        /* Если браузер не поддерживает woff2, загрузит woff */
+        url("./Сайт/font/SegoePrint/segoeprint.ttf") format("woff");
+}
+
+@font-face {
+    font-family: "Lemon";
+    font-style: normal;
+    font-weight: 400;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: local("Kosugi Maru"),
+        /* Если не получилось, загрузит woff2 */
+        url("./Сайт/font/Lemon-Regular/Lemon-Regular.ttf") format("ttf"),
+        /* Если браузер не поддерживает woff2, загрузит woff */
+        url("./Сайт/font/Lemon-Regular/Lemon-Regular.ttf") format("woff");
+}
+
+/* header start */
+header {
+    background-image: url(./Сайт/Шапка/bozhe_pochemu_nelzya_bilo_prosto_eto_vitashit.png);
+
+    background-repeat: no-repeat;
+    height: 435px;
+}
+
+/* nav start */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    padding: 20px 300px;
+}
+
+nav a {
+    font-size: 45px;
+    text-decoration: none;
+
+    position: relative;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+a:hover::before {
+    transform: scaleX(1);
+}
+
+/* nav end */
+
+header .game-name {
+    padding-top: 185px;
+    font-size: 200px;
+
+    text-align: center;
+}
+
+.game-name {
+    font-family: Lemon;
+    font-size: 60px;
+    color: #FFFFFF;
+    text-shadow:
+        -0 -6px 0 #EE9852,
+        0 -6px 0 #EE9852,
+        -0 6px 0 #EE9852,
+        0 6px 0 #EE9852,
+        -6px -0 0 #EE9852,
+        6px -0 0 #EE9852,
+        -6px 0 0 #EE9852,
+        6px 0 0 #EE9852,
+        -1px -6px 0 #EE9852,
+        1px -6px 0 #EE9852,
+        -1px 6px 0 #EE9852,
+        1px 6px 0 #EE9852,
+        -6px -1px 0 #EE9852,
+        6px -1px 0 #EE9852,
+        -6px 1px 0 #EE9852,
+        6px 1px 0 #EE9852,
+        -2px -6px 0 #EE9852,
+        2px -6px 0 #EE9852,
+        -2px 6px 0 #EE9852,
+        2px 6px 0 #EE9852,
+        -6px -2px 0 #EE9852,
+        6px -2px 0 #EE9852,
+        -6px 2px 0 #EE9852,
+        6px 2px 0 #EE9852,
+        -3px -6px 0 #EE9852,
+        3px -6px 0 #EE9852,
+        -3px 6px 0 #EE9852,
+        3px 6px 0 #EE9852,
+        -6px -3px 0 #EE9852,
+        6px -3px 0 #EE9852,
+        -6px 3px 0 #EE9852,
+        6px 3px 0 #EE9852,
+        -4px -6px 0 #EE9852,
+        4px -6px 0 #EE9852,
+        -4px 6px 0 #EE9852,
+        4px 6px 0 #EE9852,
+        -6px -4px 0 #EE9852,
+        6px -4px 0 #EE9852,
+        -6px 4px 0 #EE9852,
+        6px 4px 0 #EE9852,
+        -5px -6px 0 #EE9852,
+        5px -6px 0 #EE9852,
+        -5px 6px 0 #EE9852,
+        5px 6px 0 #EE9852,
+        -6px -5px 0 #EE9852,
+        6px -5px 0 #EE9852,
+        -6px 5px 0 #EE9852,
+        6px 5px 0 #EE9852,
+        -6px -6px 0 #EE9852,
+        6px -6px 0 #EE9852,
+        -6px 6px 0 #EE9852,
+        6px 6px 0 #EE9852,
+        -6px -6px 0 #EE9852,
+        6px -6px 0 #EE9852,
+        -6px 6px 0 #EE9852,
+        6px 6px 0 #EE9852;
+}
+
+/* header end */
+
+/* blocks start */
+#about_project {
+    background-color: #1D1B1A;
+}
+
+#about_project {
+    padding: 200px 548px 200px 425px;
+}
+
+#about_project .block h1 {
+    font-size: 60px;
+
+    padding-left: 110px;
+    padding-bottom: 40px;
+}
+
+.block p {
+    font-size: 45px;
+
+    text-align: justify;
+}
+
+/* first block start */
+#about_project .block:nth-child(1) p {
+    padding-right: 150px;
+}
+
+/* first block end */
+
+/* second block start */
+#about_project .block #caption-playerable-character {
+    padding-top: 300px;
+    padding-left: 570px;
+}
+
+#about_project .block:nth-child(2) p {
+    padding-left: 300px;
+}
+
+/* second block end */
+
+#kroll_about {
+    position: absolute;
+    top: 420px;
+    left: 1200px;
+
+    height: 350px;
+
+    /* background-color: aqua; */
+}
+
+
+/* playerable cherti start*/
+
+.mirror_image {
+    transform: scale(-1, 1);
+
+    position: absolute;
+}
+
+#hamster-combat-main {
+    position: absolute;
+
+    top: 1300px;
+    height: 363.53px;
+
+    left: 420px;
+}
+
+#ne-hamster-combat-main {
+    height: 396.32px;
+
+    top: 1245px;
+    left: 550px;
+}
+
+/* playerable cherti konec*/
+
+
+
+/* blocks end */
+
+/* concepts start */
+#concepts {
+    background: linear-gradient(180deg, rgba(20, 18, 18, 1) 0%, rgba(42, 42, 42, 1) 100%);
+
+    padding: 100px 548px 50px 425px;
+}
+
+video {
+    width: 1020px;
+
+    /* padding: 100px 548px 50px 425px; */
+}
+
+.center-h1 {
+    text-align: center;
+    font-size: 96px;
+
+    line-height: 90px;
+
+    padding: 40px;
+
+    /* padding-bottom: 30px; */
+}
+
+#hata-mellstroya {
+    display: flex;
+    margin: 0 auto;
+
+    padding-top: 120px;
+
+    width: 725px;
+    height: 616px;
+}
+
+/* инфа о концептах начало */
+#concept_info_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 10px;
+}
+
+#system_shtuki {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+#system_shtuki li {
+    line-height: 25px;
+
+    list-style: none;
+}
+
+#concept_info_block .text_concept p {
+    padding: 20px;
+
+    line-height: 30px;
+}
+
+.image_concept img {
+    height: 428px;
+    width: 428px;
+}
+
+.right {
+    padding-left: 80px;
+}
+
+/* инфа о концептах конец */
+
+
+/* concepts end */
+
+/* footer start */
+footer {
+    background-color: black;
+}
+
+/* contact start */
+#contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0 auto;
+}
+
+#contacts #social_shtuki i {
+    font-size: 50px;
+}
+
+#contacts #social_shtuki i:hover,
+#contacts p a:hover {
+    color: rgb(102, 102, 102);
+}
+
+#contacts p {
+    font-size: 40px;
+}
+
+/* contact end */
+#hamster-combat-button {
+    width: 265px;
+}
+
+#button-install {
+    display: flex;
+    margin: 0 auto;
+
+    color: #835630;
+    font-size: 60px;
+
+    border-radius: 50px;
+    border: 5px solid #DB9050;
+    width: 576px;
+
+    padding: 15px 0px;
+
+    background-color: #FFD39A;
+}
+
+#hamster-combat-button {
+    position: relative;
+    z-index: 2;
+    left: 1120px;
+    /* top: -200px; */
+}
+
+/* #hamster-combat-button {
+    position: absolute;
+    z-index: 5;
+    left: 1150px;
+    /* top: 6050px; */
+/* } */
+
+
+/* #hamster-combat-button {
+    position: relative;
+    z-index: 3;
+
+    margin-right: -500px;
+} */
+
+#div_s_knopoi {
+    /* padding-top: 50px; */
+    padding-bottom: 60px;
+}
+
+#button-install {
+    margin-top: -160px;
+}
+
+#button-install:hover {
+    background-color: #ffe3c1;
+    cursor: pointer;
+}
+
+#div_s_knopoi a {
+    text-decoration: none;
+
+    padding-left: 100px;
+}
+
+#div_s_knopoi input {
+    display: none;
+}
+
+/* footer end */
