@@ -107,8 +107,8 @@ private bool isCheck;
 
 <details><summary>Модификаторы доступа</summary>
 
-**Модификаторы доступа**
 `public` - доступен из любого места кода
+**Пример**
 ```
 public class ClassName0 : MonoBehaviour
 {
@@ -130,6 +130,7 @@ public class ClassName1 : MonoBehaviour
 
 ```
 `private`- доступен только внутри класса
+**Пример**
 ```
 public class ClassName : MonoBehaviour
 {
@@ -175,7 +176,8 @@ public flout FunctionName()
 
 }
 ```
-<details>
+<.details>
+#### Примеры
 **Прервать метод**
 
 ## Условия
