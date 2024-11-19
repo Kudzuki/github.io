@@ -176,7 +176,7 @@ public flout FunctionName()
 
 }
 ```
-<.details>
+</details>
 #### Примеры
 **Прервать метод**
 
