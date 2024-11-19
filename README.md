@@ -176,7 +176,7 @@ public flout FunctionName()
 }
 ```
 <details>
-**Прервать мето**
+**Прервать метод**
 
 ## Условия
 
