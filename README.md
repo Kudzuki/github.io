@@ -1,5 +1,5 @@
-# Памятка по Unity C#
-***
+<h1 align="center">Памятка по Unity C#</h1>
+
 ## Переменные
 Для объявления переменных используется следующий синтаксис:
 
@@ -102,18 +102,13 @@ private bool isCheck;
 ```
 
 ## Методы
-Для объявления метода требуеться тело:
-<details><summary>Правильное объявления метода в теле</summary>
-	
+Синтаксис написания метода: **МодификаторДоступа ВозвращаемыйТип Название (Аргумент)**
+
+`void` — это специальный тип методов, который говорит, что метод ничего не возвращает 
 ```
-public class ClassName: MonoBehaviour
+public void FunctionName() 
 {
-    // Объявление метода с телом
-    public void FunctionName()
-    {
-        // Тело метода
-        Debug.Log("Этот метод выполняется.");
-    }
+	// Код выполняемый функцией
 }
 ```
 
@@ -227,36 +222,54 @@ public class ClassName0 : ClassName //наследн
 
 </details>
 
-<details><summary>Возвращаемый тип</summary>
+<details><summary>Прервать метод</summary>
+	
+----
+	
+Для прерывания метода мы используем ``return`` - это ключевое слово, которое используется для завершения выполнения метода или возврата значения из этого метода.
+
+<details><summary>Пример</summary>
+
+```
+	public int money = 50; // Количество денег
+	public int itemCost = 30;  // Стоимость предмета
+
+	public void CanPurchaseItem()
+    	{
+		int quantity = money - itemCost; // сколько осталось
+		Debug.Log("У вас осталось "+quantity+" рублей");
+		return; // Метод завершиться, код ниже выполнен не будет
+		
+		int returned = quantity+money; // сколько вернули
+		Debug.Log("Вам вернули "+returned+" рублей");
+    	}
+
+     	private void Start()
+     	{
+		CanPurchaseItem();
+    	}
+```
+
+</details>
 
 ----
 
-* `void` — это тип метода, который ничего не возвращает 
+</details>
+
+<details><summary>Возвращаемый тип</summary>
+
+----
 
 * `bool` — это тип метода, который возвращает только true (Правда) или false (Ложь)
 
 * `int` — это тип метода, который возвращает целое число (Пример: 2)
 
-* `flout` — это тип метода, который возвращает число с плавающей запятой (137.5f == 137,52323)
+* `float` — это тип метода, который возвращает число с плавающей запятой (137.5f == 137,52323)
   
 * `string` — это тип метода, который  просто возвращает текст
   
 <details><summary>Примеры</summary> 
 	
-```
-public class ClassName : MonoBehaviour
-{
-	public void FunctionName() 
-	{
-		Debug.Log("Hello, World!");
-	}
-	private void Start()
-	{
-		FunctionName();
-	}
-}
-```
-
 ```
 public class ClassName : MonoBehaviour
 {
@@ -268,14 +281,8 @@ public class ClassName : MonoBehaviour
 
 	private void Start()
 	{
-		if (FunctionName()==false) //Проверка 
-		{
-			Debug.Log("Мы получили " + FunctionName());
-		}
-		else
-		{
-			Debug.Log("Мы ничего не получили");
-		}
+
+		Debug.Log("Мы получили " + FunctionName());
 		
 	}
 
@@ -293,14 +300,7 @@ public class ClassName : MonoBehaviour
 
 	private void Start()
 	{
-		if (FunctionName() <= money) //Проверка 
-		{
-			Debug.Log("Сумма " + FunctionName() + " и у вас " + money + " денег.");
-		}
-		else
-		{
-			Debug.Log($"У вас {money} денег, и вам их не хватает.");
-		}
+		Debug.Log("Сумма " + FunctionName() + " и у вас " + money + " денег.");
 	}
 }
 ```
@@ -308,16 +308,14 @@ public class ClassName : MonoBehaviour
 ```
 public class ClassName : MonoBehaviour
 {
-	public flout FunctionName()
+	public float FunctionName()
 	{
 	        return 127.5f;
 	}
 	private void Start()
 	{
-		if (FunctionName() <= 130)
-		{
-			Debug.Log("Всё работает " + FunctionName());
-		}
+
+	Debug.Log("Всё работает на " + FunctionName()+ " %");
 	}
 }
 ```
@@ -325,6 +323,7 @@ public class ClassName : MonoBehaviour
 </details>
 
 ----
+
 
 </details>
 
@@ -361,8 +360,6 @@ public class ClassName : MonoBehaviour
 <details><summary>Пример</summary>
 	
 ```
-public class ClassName : MonoBehaviour
-{
     public void ShowMessage(string message, int number)
     {
         Debug.Log(message + " " + number);
@@ -372,7 +369,6 @@ public class ClassName : MonoBehaviour
     {
         ShowMessage("Привет", 42); // Вывод: "Привет 42"
     }
-}
 ```
 </details>
 	
@@ -385,33 +381,6 @@ public class ClassName : MonoBehaviour
 <details><summary>Примеры примитивных типов данных</summary>
 
 
-```
-public class ClassName : MonoBehaviour
-{
-	public int count = 17;
-	public bool True = false;
-
-	public void ShowMessage()
-	{
-		if (True)
-		{
-			Debug.Log(count);
-		}
-		else
-		{
-			Debug.Log(count);
-		}
-		
-	}
-
-	public void Start()
-	{
-		ShowMessage();
-	}
-
-}
-
-```
 
 ```
 public class ClassName : MonoBehaviour
@@ -420,85 +389,64 @@ public class ClassName : MonoBehaviour
     {
         Debug.Log(message);
     }
-
-    public void ShowMessage(float message)
-    {
-        Debug.Log(message);
-    }
-
-    public void ShowMessage(string message)
-    {
-        Debug.Log(message);
-    }
-
-    public void ShowMessage(bool message)
-    {
-        Debug.Log(message);
-    }
-
     private void Start()
     {
-
-        ShowMessage(7.5f);
-	ShowMessage(7);
-        ShowMessage("Hello!");
-	ShowMessage(true);
+        ShowMessage(7);
     }
 }
 
 ```
-</details>
-
-
-----
-</details>
-
-	
-<details><summary>Прервать метод</summary>
-	
-----
-	
-Для прерывания метода мы используем ``return`` - это ключевое слово, которое используется для завершения выполнения метода или возврата значения из этого метода.
-
-<details><summary>Пример</summary>
 
 ```
 public class ClassName : MonoBehaviour
 {
-	public int playerMoney = 50; // Количество денег
-	public int itemCost = 30;  // Стоимость предмета
-
-	// Метод для проверки, может ли игрок купить предмет
-	public bool CanPurchaseItem()
-    	{
-	        // Если у игрока достаточно денег, возвращаем true
-	        if (playerMoney >= itemCost)
-	        {
-	            return true; // Выход из метода с значением true
-	        }
-	        else
-	        {
-	            return false; // Выход из метода с значением false
-	        }
-    	}
-
-     	private void Start()
-     	{
-	        // Проверяем, может ли игрок купить предмет
-	        if (CanPurchaseItem()) // Для понимания это то же самое что и CanPurchaseItem()==true
-	        {
-	            Debug.Log("Вы можете купить предмет!");
-	        }
-	        else
-	        {
-	            Debug.Log("У вас недостаточно денег для покупки предмета.");
-	        }
-    	}
-
+    public void ShowMessage(float message)
+    {
+        Debug.Log(message);
+    }
+    private void Start()
+    {
+        ShowMessage(7.5f);
+    }
 }
+
 ```
 
+```
+public class ClassName : MonoBehaviour
+{
+    public void ShowMessage(string message)
+    {
+        Debug.Log(message);
+    }
+    private void Start()
+    {
+        ShowMessage("Hello!");
+    }
+}
+
+```
+
+```
+public class ClassName : MonoBehaviour
+{
+    public void ShowMessage(bool message)
+    {
+        Debug.Log(message);
+    }
+    private void Start()
+    {
+        ShowMessage(true);
+    }
+}
+
+```
 </details>
+
+
+----
+</details>
+
 
 ----
 </details>
@@ -549,19 +497,332 @@ public class ClassName : MonoBehaviour
 }
 
 ```
-
-----
-</details>
-
 ----
 
-</details>
+#### Реальный пример в `Unity`
+
+В данном примере мы приводим два скрипта.
+
+Скрипт `Cube` содержит несколько перегруженных методов `TransformCube`. Первый метод принимает логическое значение. Он перемещает объект на заданную позицию и выводит сообщение в консоль. Второй метод принимает целое число, увеличивает его на 8 и также перемещает объект на заданную позицию. Третий метод без параметров вызывает оба предыдущих метода. Четвертый метод принимает трансформ целевого объекта и обновляет позицию куба, а затем вызывает первый метод.
+
+Скрипт `Camera` имеет ссылку на скрипт `Cube` и содержит метод `Start`, который вызывается при старте игры. В этом методе происходит вызов методов `TransformCube`, чтобы переместить куб на начальную позицию и обновить его позицию в соответствии с позицией другого объекта.
+
+<table>
+<tr>
+	
+<td>
+	
+```
+public class Cube : MonoBehaviour
+{
+
+    public bool TransformCube(bool value)
+    {
+
+        transform.position = new Vector3(10,0,10);
+        value = false;
+        Debug.Log("Куб теперь " + value);
+        return value;
+    }
+    public int TransformCube(int value)
+    {
+        transform.position = new Vector3(15,0,15);
+        value += 8;
+        Debug.Log(value);
+        return value;
+    }
+    public void TransformCube()
+    {
+        TransformCube(true);
+        TransformCube(10);
+    }
+    public void TransformCube(Transform targetTransform)
+    {
+        transform.position = targetTransform.position;        
+        Debug.Log("Позиция куба обновлена на позицию целевого объекта");
+        TransformCube(true);
+    }
+}
+```
+
+</td>
+
+<td>
+	
+```
+public class Camera : MonoBehaviour
+{
+    public Cube cube;
+    public GameObject gameCube;
+
+    private void Start()
+    {
+        cube.TransformCube();
+        cube.TransformCube(gameCube.transform);
+    }
+}
+```
+
+</td>	
+</tr>
+</table>
+
+----
 
 </details>
+
+
+
+----
+
+</details>
+
+#### Примеры  :pencil2:
+
+В программировании важно писать код, который не только работает, но и легко читается и поддерживается. Использование методов с аргументами позволяет избежать дублирования кода и делает его более универсальным. В этом примере мы рассмотрим два подхода к одной и той же задаче: один без использования методов, а другой с использованием методов, принимающих аргументы.
+
+В первом примере (в левой колонке) код содержит несколько повторяющихся операций, что делает его менее эффективным и более трудным для изменения. Если вам когда-либо понадобится изменить значение, которое добавляется к переменной, вам придется делать это в нескольких местах.
+
+Во втором примере (в правой колонке) мы используем метод `AddValueAndLog`, который принимает аргумент. Это позволяет нам вызывать один и тот же метод с различными значениями, избегая дублирования кода. Такой подход не только упрощает изменение логики программы, но и улучшает её читаемость.
+
+Теперь давайте посмотрим на оба примера кода и поймем, почему второй подход является более предпочтительным.
+<table>
+<tr>
+	
+<td>
+	
+**Без использования методов** 
+
+	
+```
+
+	public int number = 15;
+
+	private void Start()
+    	{
+        	if (number>=10)
+		{
+			number+=10;
+			Debug.Log(number);
+		}
+		else if (number<20)
+		{
+			number+=10;
+			Debug.Log(number);
+		}
+		else
+		{
+			number+=10;
+			Debug.Log(number);
+		}
+    	}
+			
+```
+
+</td>	
+
+  
+<td>
+
+   **Использованием методов, принимающих аргументы**
+```
+	public int number = 15;
+
+	private void Start()
+    	{
+        	if (number>=10)
+		{
+			AddValueAndLog(10);
+		}
+		else if (number<20)
+		{
+			AddValueAndLog(10);
+		}
+		else
+		{
+			AddValueAndLog(10);
+		}
+    	}
+	public void AddValueAndLog(int valueToAdd)
+	{
+		number += valueToAdd; // Добавляем значение к number
+		Debug.Log(number); // Выводим результат в консоль
+	}
+
+	
+```
+</td>
+</tr>
+</table> 
+
+##### Примеры 
+
+Это метод, который возвращает целое число `int`. 
+
+```
+public int FunctionName()
+```
+
+Это метод, который возвращает число с плавающей точкой `float`.
+
+```
+public float FunctionName()
+```
+
+Это метод, который возвращает булево значение `bool`, может быть `true` или `false`.
+
+```
+public bool FunctionName()
+```
+
+Это метод, который возвращает строку `string`.
+
+```
+public string FunctionName()
+```
+
+Это метод, который не возвращает значение `void` и принимает аргумент типа `int`.
+
+```
+public void FunctionName(int name)
+```
+
+Это метод, который не возвращает значение `void` и принимает аргумент типа `float`.
+
+```
+public void FunctionName(float name)
+```
+
+Это метод, который не возвращает значение `void` и принимает аргумент типа `bool`.
+
+```
+public void FunctionName(bool name)
+```
+
+Это метод, который не возвращает значение `void` и принимает аргумент типа `string`.
+
+```
+public void FunctionName(string name)
+```
+
+Это метод, который не возвращает значение `void` и принимает аргумент типа `Transform`.
+
+```
+public void FunctionName(Transform name)
+```
+
+Это метод, который не возвращает значение `void` и принимает аргумент типа `object`.
+
+```
+public void FunctionName(object name)
+```
+
+Это метод, который возвращает целое число `int` и принимает аргумент типа `int`.
+
+```
+public int FunctionName(int name)
+```
+
+Это метод, который возвращает число с плавающей точкой `float` и принимает аргумент типа `float`.
+
+```
+public float FunctionName(float name)
+```
+
+Это метод, который возвращает булево значение `bool` и принимает аргумент типа  `bool`.
+
+```
+public bool FunctionName(bool name)
+```
+
+Это метод, который возвращает строку `string` и принимает аргумент типа `string`.
+
+```
+public string FunctionName(string name)
+```
 
 
 
 ## Условия
+
+В `C#` есть несколько проверок условий:
+
+* `if` - создание нового проверки 
+* `else if` - проверка если начальное проверка не прошло
+* `else` - в случае если не одна проверка не выполнена
+
+Они делаються для проверки методов, переменных и т.д.
+Давайте расмотрим их более подробно.
+
+<details><summary>Одно типные условия</summary>
+
+----
+Это ситуации, когда вы проверяете несколько условий, относящихся к одному и тому же типу данных или логике, и выполняете одинаковые действия в зависимости от результата проверки. Обычно это делается для упрощения кода и повышения его читаемости.
+
+**Пример**
+
+```
+	public int number = 10;
+	private void Start()
+	{
+		if (number>0)
+		{
+			Debug.Log("Число положительное.");
+		}
+		else if (number<0)
+		{
+			Debug.Log("Число отрицательное.");
+		}
+		else
+		{
+			Debug.Log("Число равно нулю.");
+		}
+	}
+```
+
+----
+</details>
+
+
+<details><summary>Разные условия</summary>
+
+Для проверки нескольких условий существует символы: 
+* `&&` - означеат и
+* `||` - означает или
+* `!` - изначает не
+
+
+**Пример**
+
+```
+	public int number = 10; //можно поменять в инспекторе 
+	public bool isBool = false; //можно поменять в инспекторе 
+	private void Start()
+	{
+		if (number>0 && isBool) // number должно быть больше нуля и isBool должен быть true
+		{
+			Debug.Log("1");
+		}
+		else if (number>0 && !isBool) //number должно быть больше нуля  isBool должен быть false
+		{
+			Debug.Log("2");
+		}
+		else if (number<0 && !isBool) //number должно быть меньше нуля или isBool должен быть false
+		{
+			Debug.Log("3");
+		}
+	}
+```
+
+
+</details>
+
+
+<details><summary>Разные условия</summary>
+
+
+</details>
+
 
 ```
 if (условие1)
