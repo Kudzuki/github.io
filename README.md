@@ -21,7 +21,7 @@
 ----
 </details>
 
-<details><summary>Модификаторы доступа</summary>
+<details><summary><h3>Модификаторы доступа</h3></summary>
 	
  
 ----
@@ -43,7 +43,7 @@ private
 ----
 </details>
 
-<details><summary>Тип</summary>
+<details><summary><h3>Тип</h3></summary>
 
 ----
 Указывает на тип переменной, это может быть любой доступный тип
@@ -60,7 +60,7 @@ private
 ----
 </details>
 
-<details><summary>Название</summary>
+<details><summary><h3>Название</h3></summary>
 
 ----
 Используется при обращении к объявленной переменной в скрипте
@@ -82,7 +82,7 @@ private
 ----
 </details>
 
-#### Примеры
+**Примеры**
 
 Целочисленная переменная с именем `count` доступная другим классам и отображаемая в инспекторе:
 ```
@@ -119,7 +119,7 @@ public void FunctionName()
 
 Синтаксис написания метода: **МодификаторДоступа ВозвращаемыйТип Название (Аргумент)**
 
-<details><summary>Создание локальной перемменной в методе</summary>
+<details><summary><h3>Создание локальной перемменной в методе</h3></summary>
 
 ----
 Локальной переменная - это переменная, которая существует внутри метода.
@@ -147,7 +147,7 @@ public class ClassName0 : MonoBehaviour
 
 </details>
 
-<details><summary>Модификаторы доступа</summary>
+<details><summary><h3>Модификаторы доступа</h3></summary>
 
 ----
 
@@ -192,7 +192,7 @@ public class ClassName : MonoBehaviour
 	}
 }
 ```
-<details><summary>Дополнительно</summary>
+<details><summary><h3>Дополнительно</h3></summary>
 	
 `protected` - доступен только классам-наследникам
 
@@ -224,7 +224,7 @@ public class ClassName0 : ClassName //наследн
 
 </details>
 
-<details><summary>Прервать метод</summary>
+<details><summary><h3>Прервать метод</h3></summary>
 	
 ----
 	
@@ -258,7 +258,7 @@ public class ClassName0 : ClassName //наследн
 
 </details>
 
-<details><summary>Возвращаемый тип</summary>
+<details><summary><h3>Возвращаемый тип</h3></summary>
 
 ----
 
@@ -329,7 +329,7 @@ public class ClassName : MonoBehaviour
 
 </details>
 
-<details><summary>Название</summary>
+<details><summary><h3>Название</h3></summary>
 
 ----
 Используется при обращении к объявленном методе в скрипте
@@ -351,7 +351,7 @@ public class ClassName : MonoBehaviour
 ----
 </details>
 
-<details><summary>Аргумент</summary>
+<details><summary><h3>Аргумент</h3></summary>
 
 ----
 
@@ -380,7 +380,7 @@ public class ClassName : MonoBehaviour
 * ``string`` — строка
 * ``bool`` — булевое значение
 
-<details><summary>Примеры примитивных типов данных</summary>
+<details><summary><h3>Примеры примитивных типов данных</h3></summary>
 
 
 
@@ -452,7 +452,7 @@ public class ClassName : MonoBehaviour
 
 ----
 </details>
-<details><summary>Дополнительно</summary>
+<details><summary><h3>Дополнительно</h3></summary>
 	
 ----
 	
@@ -657,7 +657,7 @@ public class Camera : MonoBehaviour
 </tr>
 </table> 
 
-##### Примеры 
+**Примеры**
 
 `int FunctionName()`, который возвращает целое число `int`. 
 
@@ -743,7 +743,7 @@ public string FunctionName(string name)
 Они делаются для проверки методов, переменных и т.д.
 Давайте расмотрим их более подробно.
 
-<details><summary>Однотипные условия</summary>
+<details><summary><h3>Однотипные условия</h3></summary>
 
 ----
 Это ситуации, когда вы проверяете несколько условий, относящихся к одному типу данных или логике, и выполняете одинаковые действия в зависимости от результата проверки.
@@ -773,7 +773,7 @@ public string FunctionName(string name)
 </details>
 
 
-<details><summary>Логические операции</summary>
+<details><summary><h3>Логические операции</h3></summary>
 
 Для проверки нескольких условий существует символы: 
 * `&&` - означеат и
@@ -807,7 +807,7 @@ public string FunctionName(string name)
 </details>
 
 
-<details><summary>Разные условия</summary>
+<details><summary><h3>Разные условия</h3></summary>
 
 
 </details>
