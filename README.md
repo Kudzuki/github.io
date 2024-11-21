@@ -1,5 +1,7 @@
 <h1 align="center">Памятка по Unity C#</h1>
 
+<a href="#примеры-1">___<a>
+
 ## Переменные
 Для объявления переменных используется следующий синтаксис:
 
@@ -657,88 +659,75 @@ public class Camera : MonoBehaviour
 
 ##### Примеры 
 
-Это метод, который возвращает целое число `int`. 
+`int FunctionName()`, который возвращает целое число `int`. 
 
 ```
 public int FunctionName()
+{
+	return 1; //Пример
+}
 ```
 
-Это метод, который возвращает число с плавающей точкой `float`.
+`float FunctionName()`, который возвращает число с плавающей точкой `float`.
 
 ```
 public float FunctionName()
+{
+	return 1.2f; //Пример
+}
 ```
 
-Это метод, который возвращает булево значение `bool`, может быть `true` или `false`.
+`bool FunctionName()`, который возвращает булево значение `bool`, может быть `true` или `false`.
 
 ```
 public bool FunctionName()
+{
+	return false; //Пример
+}
 ```
 
-Это метод, который возвращает строку `string`.
+`string FunctionName()`, который возвращает строку `string`.
 
 ```
 public string FunctionName()
+{
+	return "Test"; //Пример
+}
 ```
-
-Это метод, который не возвращает значение `void` и принимает аргумент типа `int`.
-
-```
-public void FunctionName(int name)
-```
-
-Это метод, который не возвращает значение `void` и принимает аргумент типа `float`.
-
-```
-public void FunctionName(float name)
-```
-
-Это метод, который не возвращает значение `void` и принимает аргумент типа `bool`.
-
-```
-public void FunctionName(bool name)
-```
-
-Это метод, который не возвращает значение `void` и принимает аргумент типа `string`.
-
-```
-public void FunctionName(string name)
-```
-
-Это метод, который не возвращает значение `void` и принимает аргумент типа `Transform`.
-
-```
-public void FunctionName(Transform name)
-```
-
-Это метод, который не возвращает значение `void` и принимает аргумент типа `object`.
-
-```
-public void FunctionName(object name)
-```
-
-Это метод, который возвращает целое число `int` и принимает аргумент типа `int`.
+`int FunctionName(int name)`, который возвращает целое число `int` и принимает аргумент типа `int`.
 
 ```
 public int FunctionName(int name)
+{
+	  return name;
+}
 ```
 
-Это метод, который возвращает число с плавающей точкой `float` и принимает аргумент типа `float`.
+ `float FunctionName(float name)`, который возвращает число с плавающей точкой `float` и принимает аргумент типа `float`.
 
 ```
 public float FunctionName(float name)
+{
+	return name;
+}
 ```
 
-Это метод, который возвращает булево значение `bool` и принимает аргумент типа  `bool`.
+`bool FunctionName(bool name)`, который возвращает булево значение `bool` и принимает аргумент типа  `bool`.
 
 ```
 public bool FunctionName(bool name)
+{
+	return name;
+}
 ```
 
-Это метод, который возвращает строку `string` и принимает аргумент типа `string`.
+`string FunctionName(string name)`, который возвращает строку `string` и принимает аргумент типа `string`.
 
 ```
 public string FunctionName(string name)
+{
+	return name;
+}
 ```
 
 
@@ -747,17 +736,17 @@ public string FunctionName(string name)
 
 В `C#` есть несколько проверок условий:
 
-* `if` - создание нового проверки 
-* `else if` - проверка если начальное проверка не прошло
-* `else` - в случае если не одна проверка не выполнена
+* `if` - проверяет первое условие
+* `else if` -  проверяет следующие условия, если предыдущее условие ложно
+* `else` - выполняет блок кода, если все предыдущие условия ложны
 
-Они делаються для проверки методов, переменных и т.д.
+Они делаются для проверки методов, переменных и т.д.
 Давайте расмотрим их более подробно.
 
-<details><summary>Одно типные условия</summary>
+<details><summary>Однотипные условия</summary>
 
 ----
-Это ситуации, когда вы проверяете несколько условий, относящихся к одному и тому же типу данных или логике, и выполняете одинаковые действия в зависимости от результата проверки. Обычно это делается для упрощения кода и повышения его читаемости.
+Это ситуации, когда вы проверяете несколько условий, относящихся к одному типу данных или логике, и выполняете одинаковые действия в зависимости от результата проверки.
 
 **Пример**
 
@@ -784,7 +773,7 @@ public string FunctionName(string name)
 </details>
 
 
-<details><summary>Разные условия</summary>
+<details><summary>Логические операции</summary>
 
 Для проверки нескольких условий существует символы: 
 * `&&` - означеат и
@@ -807,7 +796,7 @@ public string FunctionName(string name)
 		{
 			Debug.Log("2");
 		}
-		else if (number<0 && !isBool) //number должно быть меньше нуля или isBool должен быть false
+		else if (number<0 || !isBool) //number должно быть меньше нуля или isBool должен быть false
 		{
 			Debug.Log("3");
 		}
