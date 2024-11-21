@@ -657,7 +657,6 @@ public class Camera : MonoBehaviour
 </tr>
 </table> 
 
-**Примеры**
 
 `int FunctionName()`, который возвращает целое число `int`. 
 
@@ -668,6 +667,8 @@ public int FunctionName()
 }
 ```
 
+<br>
+
 `float FunctionName()`, который возвращает число с плавающей точкой `float`.
 
 ```
@@ -676,6 +677,8 @@ public float FunctionName()
 	return 1.2f; //Пример
 }
 ```
+
+<br>
 
 `bool FunctionName()`, который возвращает булево значение `bool`, может быть `true` или `false`.
 
@@ -686,6 +689,8 @@ public bool FunctionName()
 }
 ```
 
+<br>
+
 `string FunctionName()`, который возвращает строку `string`.
 
 ```
@@ -694,6 +699,9 @@ public string FunctionName()
 	return "Test"; //Пример
 }
 ```
+
+<br>
+
 `int FunctionName(int name)`, который возвращает целое число `int` и принимает аргумент типа `int`.
 
 ```
@@ -702,6 +710,8 @@ public int FunctionName(int name)
 	  return name;
 }
 ```
+
+<br>
 
  `float FunctionName(float name)`, который возвращает число с плавающей точкой `float` и принимает аргумент типа `float`.
 
@@ -712,6 +722,8 @@ public float FunctionName(float name)
 }
 ```
 
+<br>
+
 `bool FunctionName(bool name)`, который возвращает булево значение `bool` и принимает аргумент типа  `bool`.
 
 ```
@@ -720,6 +732,8 @@ public bool FunctionName(bool name)
 	return name;
 }
 ```
+
+<br>
 
 `string FunctionName(string name)`, который возвращает строку `string` и принимает аргумент типа `string`.
 
@@ -746,12 +760,12 @@ public string FunctionName(string name)
 <details><summary><h3>Однотипные условия</h3></summary>
 
 ----
-Это ситуации, когда вы проверяете несколько условий, относящихся к одному типу данных или логике, и выполняете одинаковые действия в зависимости от результата проверки.
+Это ситуация, когда вы проверяете один тип данных или логику, и выполняете одинаковые действия в зависимости от результата проверки.
 
 **Пример**
 
 ```
-	public int number = 10;
+	public int number = 10; // Чсло, которое будем проверять
 	private void Start()
 	{
 		if (number>0)
