@@ -611,9 +611,10 @@ public class Camera : MonoBehaviour
 
 ----
 
-Представляет такую конструкцию, при которой метод вызывает сам себя. До тех пор пока мы не переберем заданное значения метода. 
+Рекурсия — это метод решения задачи, при котором метод вызывает сам себя для обработки подзадач, пока не будет достигнуто базовое условие, определяющее завершение рекурсивных вызовов.
 
-Рекурсия не заменяет `for` или `while` (циклы).
+Важно помнить, что для успешного применения рекурсии необходимо определить условие, при выполнении которого рекурсия заканчивается и метод больше не вызывает саму себя, чтобы избежать бесконечных вызовов и переполнения стека.
+
 
 **Пример**
 
@@ -828,7 +829,7 @@ public string FunctionName(string name)
 * `else if` -  проверяет следующие условия, если предыдущее условие ложно
 * `else` - выполняет блок кода, если все предыдущие условия ложны
 
-Они делаются для проверки методов, переменных и т.д.
+Эти конструкции используются для того, чтобы выбрать, какой из путей кода следует выполнять на основе логического выражения.
 Давайте расмотрим их более подробно.
 
 <details><summary><h3>Конструкция условий</h3></summary>
@@ -837,9 +838,13 @@ public string FunctionName(string name)
 
 После написания `if` обязательно ставим `(условие)`, так как в скобках пишется условие. Также, если вы написали `else if`, то также обязательно ставим `(условие)`.
 
-Если после этого можно вызвать `else`, делаем без условий.
+`else if` являються обязательными после `if` и  до `else`!
 
 Количество условий с `else if` может быть любым.
+
+Если после этого можно вызвать `else`, делаем без условий.
+
+
 
 **Пример**
 
@@ -875,27 +880,67 @@ public string FunctionName(string name)
 * `||` - оператор ИЛИ
 * `!` - оператор НЕ
 
+В представленном примере мы видим, что мы храним результат логической операции в булевой переменной.
 
-**Пример**
+Если хотя бы одно из условий выполнено, то булевая переменная примет значение  `true` (истина). Если же ни одно из условий не будет выполнено, то переменная получит значение `false` (ложь).
+
+**Пример 1**
 
 ```
-	public int number = 10; //можно поменять в инспекторе 
-	public bool isBool = false; //можно поменять в инспекторе 
-	private void Start()
-	{
-		if (number>0 && isBool) // number должно быть больше нуля и isBool должен быть true
-		{
-			Debug.Log("1");
-		}
-		else if (number>0 && !isBool) //number должно быть больше нуля и isBool должен быть false
-		{
-			Debug.Log("2");
-		}
-		else if (number<0 || !isBool) //number должно быть меньше нуля или isBool должен быть false
-		{
-			Debug.Log("3");
-		}
-	}
+	public int a = 6;
+    	public int w = 2;
+    	void Start()
+    	{
+        	bool qweqw0 = a > 5 || w < 9;
+        	Debug.Log("Результат qweqw0: " + qweqw0);
+
+        	bool qweqw1 = a > 5 && w == 9;
+        	Debug.Log("Результат qweqw1: " + qweqw1);
+
+        	bool qweqw2 = a > 5 && w != 9;
+        	Debug.Log("Результат qweqw2: " + qweqw2);
+
+    	}
+```
+
+В данном примере мы используем условные операторы `if` для проверки различных условий. Давайте разберем код подробнее.
+
+**Пример 2**
+
+```
+
+    	public int a = 4; // Объявляем переменную a и присваиваем ей значение 4
+    	public int w = 10; // Объявляем переменную w и присваиваем ей значение 10
+	void Start()
+    	{
+		// Проверяем, выполняется ли хотя бы одно из условий: a больше 5 или w меньше 9
+        	if (a > 5 || w < 9)
+        	{
+			 // Если одно из условий истинно, выводим сообщение
+            		Debug.Log("Результат истина");
+        	}	
+
+        	else 
+        	{
+			// Если оба условия ложны, выводим другое сообщение
+            		Debug.Log("Результат ложь");
+        	}
+
+		// Создаем булевую переменную qweqw1, которая будет истинна только если a меньше 5 и w не равно 9
+        	bool qweqw1 = a < 5 && w != 9;
+        	if(qweqw1)
+        	{
+			// Если qweqw1 истинно, выводим сообщение
+            		Debug.Log("Результат истина");
+        	}
+        	else
+        	{
+			// Если qweqw1 ложно, выводим другое сообщение
+            		Debug.Log("Результат ложь");
+        	}       
+
+    	}
+
 ```
 
 ----
@@ -906,13 +951,118 @@ public string FunctionName(string name)
 
 ----
 
+В данных скриптах мы расмотрим применение, всего полученного материала по: `Условиям` и  `Методам`. 
 
+<table>
+<tr>
+<td>
 
+```
+public class Camera : MonoBehaviour
+{
+
+    [SerializeField] private Cube cube; //  код Cube
+    [SerializeField] private GameObject gameCube; // простой куб на сцене
+    [SerializeField] private bool IsBool = true;  // булевая переменная
+
+    private void Update()
+    {
+        if (IsBool) // Если IsBool = истина
+        {
+            Test(); // выполняем метод Test
+        }
+        else if (!IsBool) // Если IsBool = ложь
+        {
+            if (Input.GetMouseButtonDown(1)) // Если мы нажали на правую кнопку мыши
+            {
+                IsBool= true; // IsBool становиться истенной
+            }
+        }
+
+    }
+
+    private void Test() // метод 
+    {
+        if (Input.GetMouseButtonDown(0)) //Если мы нажали на левую кнопку мыши
+        {
+            if (gameCube!=null && cube!= null) // Проверяем если у нас данные об объектах 
+            {
+                Debug.Log("Обьект и скрипт назначены в инспекторе");
+                cube.TransformCube(IsBool); // Выполняем метод из скрипта Сube
+                IsBool=false;
+            } 
+            else
+            {
+                Debug.Log("Ничего не назначено");
+                
+            }
+        }
+        else if (Input.GetMouseButtonDown(1)) // Если мы нажали на правую кнопку мыши
+        {   
+            if (gameCube!=null && cube!= null) // Проверяем если у нас данные об объектах 
+            {
+                cube.ColorCube(gameCube); // Выполняем метод из скрипта Сube
+            } 
+            else
+            {
+                Debug.Log("Ничего не назначено");
+            }
+        }
+    }
+}
 
 ```
 
+ 
+</td>
+<td>
 
 ```
+
+public class Cube : MonoBehaviour
+{
+
+	public bool TransformCube(bool value) // Метод для перемещения главного куба с этим кодом
+    	{
+        	transform.position = new Vector3(10,0,10);
+		value = false;
+        	Debug.Log("Куб теперь " + value);
+        	return value;
+    	}
+
+    	public void TransformCube(Transform targetTransform) // Метод для позиционирования главного куба со смещением 
+    	{
+        	transform.position = new Vector3 (targetTransform.position.x - 5,targetTransform.position.y - 5,targetTransform.position.z - 5);        
+        	Debug.Log("Позиция куба обновлена на позицию целевого объекта ");
+    	}
+
+    	public void ColorCube(GameObject gameObject) // Меняем цвет у куба, которого мы задали в сприпте Camera
+    	{
+        	MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
+        	if (meshRenderer != null)
+        	{
+			if (meshRenderer.material.color == Color.red)
+            		{
+                		meshRenderer.material.color = Color.white;
+            		}
+            		else
+            		{
+                		meshRenderer.material.color = Color.red;
+            		}
+            
+            	TransformCube(gameObject.transform); // Перемещаем главный куб к другому кубу (Которого мы задали в скрипте Camera)
+        }
+    }
+}
+
+```
+ 
+</td>
+
+</tr>
+ 
+</table>
+
 
 
 ----
@@ -924,8 +1074,204 @@ public string FunctionName(string name)
 ----
 
 
+
+
+
 ----
 
 </details>
+
+**Примеры**
+
+Проверка на количества здоровья у персонажа.
+
+```
+
+public int health = 100;
+
+void Update()
+{
+	if (health > 75)
+        {
+            Debug.Log("Здоровье в порядке!");
+        }
+        else if (health > 50)
+        {
+            Debug.Log("Здоровье на среднем уровне.");
+        }
+        else if (health > 25)
+        {
+            Debug.Log("Здоровье низкое!");
+        }
+        else
+        {
+            Debug.Log("Персонаж на грани смерти!");
+        }
+}
+
+```
+
+Проверка на включенный буст для добавления скорости. 
+
+```
+
+public int baseSpeed = 5;
+public bool speedBoostActive = false;
+public float speedBoostMultiplier = 2.0f;
+
+void Update()
+{
+	float currentSpeed = baseSpeed;
+
+        if (speedBoostActive)
+        {
+            currentSpeed *= speedBoostMultiplier;
+            Debug.Log("Буст скорости активен! Текущая скорость: " + currentSpeed);
+        }
+        else
+        {
+            Debug.Log("Текущая скорость: " + currentSpeed);
+        }
+
+        // Для тестирования
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            speedBoostActive = !speedBoostActive;
+        }
+}
+
+```
+
+Проверка количества денег и времени 
+
+```
+
+public float time = 20;
+
+public float money = 100;
+
+
+void Start()
+{
+        
+	bool CancelTime = time >= 100 || time < money;
+        if(CancelTime)
+        {
+            if (money >= 100 && time==0) 
+            {
+                Debug.Log("Деньги есть, времени нет");
+            }
+            else if (money >= 100 && time>=0)
+            {
+                Debug.Log("Деньги есть, времени много");
+            }
+            else 
+            {
+                Debug.Log("Чего то не хватает");
+            }
+        }
+        else
+        {
+            Debug.Log("Много чего не хватает");
+        }   
+}
+
+```
+
+
+
+ Скрипты дальше
+
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+
+    public float health = 100f;
+
+    void Update()
+    {
+
+    }
+
+    public void Damag(float damage)
+    {
+        if (health <= 0)
+        {
+            Debug.Log("Противник пал");
+        }
+        else if (health >= 0)
+        {
+            health-=damage;
+            Debug.Log($"Вы нанесли {damage} урона");
+            Debug.Log($"Здороья осталось {health}");
+        }
+    }
+
+    public void treatment (float heal)
+    {
+        if (health<100)
+        {
+            health+= heal;
+            Debug.Log($"Вы вылечили противника на {heal} здороья");
+            Debug.Log($"Теперь здоровья {health}");
+        }
+        else
+        {
+            Debug.Log("Лечить не надо");
+        }
+        
+    }
+}
+
+```
+
+```
+
+    public Enemy enemy;
+
+    public float damage = 100f;
+
+
+    void Update()
+    {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            enemy.Damag(damage);
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            enemy.treatment(15f);
+        }
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
